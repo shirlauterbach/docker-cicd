@@ -11,7 +11,7 @@ pipelineJob('pipeline') {
     cpsScm {
       scm {
         git {
-          remote { url(shirepo/jenkins) }
+          remote { url(repo) }
           branches('master', '**/feature*')
           scriptPath('./basics/misc/Jenkinsfile')
           extensions { }  // required as otherwise it may try to tag the repo, which you may not want
