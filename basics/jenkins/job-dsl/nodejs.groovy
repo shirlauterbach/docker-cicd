@@ -38,7 +38,7 @@ job('NodeJS Docker example') {
             forcePull(false)
             forceTag(false)
             createFingerprints(false)
-            buildContext("./basics/Dockerfile")
+            buildContext("../../Dockerfile")
             skipDecorate()
         }
     }
