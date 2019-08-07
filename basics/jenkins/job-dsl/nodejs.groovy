@@ -33,12 +33,12 @@ job('NodeJS Docker example') {
     steps {
         dockerBuildAndPublish {
             repositoryName('shirepo/jenkins') //qa / dev
+            buildContext("./basics")
             tag('${GIT_REVISION,length=9}')
             registryCredentials('dockerhub')
             forcePull(false)
             forceTag(false)
             createFingerprints(false)
-            buildContext("../../Dockerfile")
             skipDecorate()
         }
     }
