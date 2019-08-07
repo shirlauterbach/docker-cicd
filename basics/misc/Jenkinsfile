@@ -18,7 +18,10 @@ node {
    }
    stage('docker run') {
      sh label: '', script: '''
+      docker rm -f docker_test
       docker run --rm -tid --name docker_test -p 3000 shirepo/jenkins:latest
+      port = docker port docker_test
+      curl -i localhost:$port
       docker kill docker_test
       
       '''
